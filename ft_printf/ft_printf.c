@@ -6,45 +6,44 @@
 /*   By: batuhankiskac <batuhankiskac@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:56 by batuhankisk       #+#    #+#             */
-/*   Updated: 2024/11/18 17:33:02 by batuhankisk      ###   ########.fr       */
+/*   Updated: 2024/11/18 20:59:06 by batuhankisk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_flags(const char *format_specifier, va_list ap, unsigned int *count)
+void	ft_putstr(const char *s, unsigned int *count)
 {
-	if (*format_specifier == 'c')
+	if (!s)
 	{
-		count += write(1, &(char *){va_arg(ap, int)}, 1);
+		*count += write(1, "(nil)", 5);
+		return ;
 	}
-	else if (*format_specifier == 's')
-	{
-		ft_putstr(va_arg(ap, const char *), count);
-	}
-	else if (*format_specifier == 'p')
-	{
-		ft_putstr("0x", count);
-		// devam edilecek
-	}
-	else if (*format_specifier == 'd' || *format_specifier == 'i')
-	{
-		ft_putnbr(va_arg(ap, int), count);
-	}
-	else if (*format_specifier == 'u')
-	{
-		ft_putunbr(va_arg(ap, unsigned int), count);
-	}
-	else if (*format_specifier == 'x' || *format_specifier == 'X')
-	{
-	}
+	while (*s)
+		*count += write(1, s++, 1);
 }
 
-int ft_printf(const char *format, ...)
+void	ft_flags(const char *format_specifier, va_list ap, unsigned int *count)
 {
-	va_list ap;
-	unsigned int i;
-	unsigned int count;
+	if (*format_specifier == 'c')
+		*count += write(1, &(char){va_arg(ap, int)}, 1);
+	else if (*format_specifier == 's')
+		ft_putstr(va_arg(ap, const char *), count);
+	else if (*format_specifier == 'p')
+		ft_putptr(va_arg(ap, void *), count);
+	else if (*format_specifier == 'd' || *format_specifier == 'i')
+		ft_putnbr(va_arg(ap, int), count);
+	else if (*format_specifier == 'u')
+		ft_putunbr(va_arg(ap, unsigned int), count);
+	else if (*format_specifier == 'x' || *format_specifier == 'X')
+		ft_puthex(va_arg(ap, unsigned int), *format_specifier, count);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list			ap;
+	unsigned int	i;
+	unsigned int	count;
 
 	va_start(ap, format);
 	i = 0;
