@@ -6,7 +6,7 @@
 /*   By: batuhankiskac <batuhankiskac@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:03 by batuhankisk       #+#    #+#             */
-/*   Updated: 2024/11/18 17:14:26 by batuhankisk      ###   ########.fr       */
+/*   Updated: 2024/11/18 17:31:55 by batuhankisk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-void ft_putnbr(int n,int count);
-void ft_putstr(const char *s, int *count);
+void ft_putunbr(unsigned int n, unsigned int *count);
+void ft_putnbr(int n, unsigned int count);
+void ft_putstr(const char *s, unsigned int *count);
 int	ft_printf(const char *, ...);
 
 

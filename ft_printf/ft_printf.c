@@ -6,13 +6,13 @@
 /*   By: batuhankiskac <batuhankiskac@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:56 by batuhankisk       #+#    #+#             */
-/*   Updated: 2024/11/18 17:13:20 by batuhankisk      ###   ########.fr       */
+/*   Updated: 2024/11/18 17:33:02 by batuhankisk      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void ft_flags(const char *format_specifier, va_list ap, int *count)
+void ft_flags(const char *format_specifier, va_list ap, unsigned int *count)
 {
 	if (*format_specifier == 'c')
 	{
@@ -33,6 +33,7 @@ void ft_flags(const char *format_specifier, va_list ap, int *count)
 	}
 	else if (*format_specifier == 'u')
 	{
+		ft_putunbr(va_arg(ap, unsigned int), count);
 	}
 	else if (*format_specifier == 'x' || *format_specifier == 'X')
 	{
