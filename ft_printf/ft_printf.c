@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: batuhankiskac <batuhankiskac@student.42    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:56 by batuhankisk       #+#    #+#             */
-/*   Updated: 2024/11/18 20:59:06 by batuhankisk      ###   ########.fr       */
+/*   Updated: 2024/12/01 14:35:17 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_printf(const char *format, ...)
 				count += write(1, "%", 1);
 			else
 				ft_flags(&format[i + 1], ap, &count);
-			i++;
+			i += 2;
 		}
 		else
 		{
