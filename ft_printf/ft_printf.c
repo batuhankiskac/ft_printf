@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: batuhankiskac <batuhankiskac@student.42    +#+  +:+       +#+        */
+/*   By: bkiskac <bkiskac@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:56 by batuhankisk       #+#    #+#             */
-/*   Updated: 2024/12/04 10:32:49 by batuhankisk      ###   ########.fr       */
+/*   Updated: 2024/12/04 12:34:39 by bkiskac          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_putstr(const char *s, unsigned int *count)
 {
 	if (!s)
 	{
-		*count += write(1, "(nil)", 5);
+		*count += write(1, "(null)", 5);
 		return ;
 	}
 	while (*s)
