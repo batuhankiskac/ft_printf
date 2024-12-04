@@ -94,10 +94,3 @@ You are welcome to contribute and enhance the project. Please follow these steps
 4. Submit a pull request.
 
 ---
-
-### **License**
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, distribute, and improve it as you wish.
-
----
-
-You can use this as your GitHub README file or add it directly to your project description. Let me know if you need further assistance! 😊
